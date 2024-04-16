@@ -1,0 +1,12 @@
+[build]
+target = "wasm32-unknown-unknown"
+
+[target.wasm32-unknown-unknown]
+linker = "lld"
+rustflags = [
+	"-C", "link-arg=--export-table"
+]
+
+[profile.release]
+strip = true
+lto = true
